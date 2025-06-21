@@ -1,29 +1,39 @@
 ---
 // Inside BaseLayout.astro or a layout you're using
-import '../styles/global.css';
+import "../styles/global.css";
+import Navigation from '../components/Nav.astro';
+const { pageTitle } = Astro.props;
+
 ---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-		<a href="/">Home</a>
-    	<a href="/about/">About</a>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro Basics</title>
+  </head>
+  <body>
+    <Navigation></Navigation>
+    <h1>My Astro Learning Blog</h1>
+    <p>{pageTitle}</p>
+    <ul>
+      <li><a href="/posts/post-1/">Post 1</a></li>
+      <li><a href="/posts/post-2/">Post 2</a></li>
+      <li><a href="/posts/post-3/">Post 3</a></li>
+    </ul>
+    <slot />
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		font-family: 'Fredoka', sans-serif;
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    font-family: "Fredoka", sans-serif;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>
