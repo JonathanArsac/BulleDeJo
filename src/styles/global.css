@@ -5,3 +5,11 @@
   font-style: normal;
   font-display: swap;
 }
+
+:root {
+  --color-yellow: #f5c000;
+  --color-white: #fcf8ef;
+  --color-black: #010101;
+  --color-blue: #1994be;
+  --color-brown: #6c5e41;
+}

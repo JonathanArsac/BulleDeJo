@@ -1,9 +1,9 @@
 ---
 // Inside BaseLayout.astro or a layout you're using
 import "../styles/global.css";
-import Navigation from '../components/Nav.astro';
-const { pageTitle } = Astro.props;
+import Navigation from "../components/Nav.astro";
 
+const { pageTitle } = Astro.props;
 ---
 
 <!doctype html>
@@ -16,24 +16,92 @@ const { pageTitle } = Astro.props;
     <title>Astro Basics</title>
   </head>
   <body>
-    <Navigation></Navigation>
-    <h1>My Astro Learning Blog</h1>
-    <p>{pageTitle}</p>
-    <ul>
-      <li><a href="/posts/post-1/">Post 1</a></li>
-      <li><a href="/posts/post-2/">Post 2</a></li>
-      <li><a href="/posts/post-3/">Post 3</a></li>
-    </ul>
-    <slot />
+    <div style="padding:20px;background-color:#fcf8ef">
+      <Navigation />
+    </div>
+    <div class="main-layout">
+      <h1>My Astro Learning Blog</h1>
+      <ul>
+        <li><a href="/posts/post-1/">Post 1</a></li>
+        <li><a href="/posts/post-2/">Post 2</a></li>
+        <li><a href="/posts/post-3/">Post 3</a></li>
+      </ul>
+      
+    </div>
   </body>
 </html>
-
+<!-- <slot /> 
+      <div id="wrapper">
+        <div id="test">
+          Hover me but the cursor always moves in the previous position of the
+          div's area
+        </div>
+      </div>
+      <div class="circle gelatine">
+        <p></p>
+      </div>
+      -->
 <style>
   html,
   body {
     font-family: "Fredoka", sans-serif;
     margin: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    background: var(--color-yellow);
+   
+     
+  }
+
+  .main-layout {
+      height: 80vh; /* or 100vh if you want full screen */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+     h1 {
+      margin: 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+      li {
+      margin-bottom: 10px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #0077cc;
+    }
+  .gelatine:hover {
+    animation: gelatine 0.5s infinite;
+  }
+  @keyframes gelatine {
+    from,
+    to {
+      transform: scale(1, 1);
+    }
+    25% {
+      transform: scale(0.9, 1.1);
+    }
+    50% {
+      transform: scale(1.1, 0.9);
+    }
+    75% {
+      transform: scale(0.95, 1.05);
+    }
+  }
+  .circle {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 4px 0px 60px 5px #fcf8ef inset;
   }
 </style>

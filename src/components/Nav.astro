@@ -1,2 +1,36 @@
+---
+import logo from '../assets/logo.svg';
+
+---
+
+<img src={logo.src} width="115" height="48" alt="Astro Homepage" style="padding-right:20px;" />
 <a href="/">Home</a>
 <a href="/about/">About</a>
+<a href="/blog/">Blog</a>
+
+<style>
+  .card {
+    padding: 1rem;
+    border-radius: 8px;
+    background: #f5f5f5;
+
+    
+
+  }
+
+  a {
+  color: #1a1a1a;             /* dark text */
+  text-decoration: none;     /* remove underline */
+  font-weight: bold;         /* optional: bolder look */
+  font-size: 1.2rem;         /* adjust to your design */
+  padding: 0.5rem 1rem;      /* spacing around the link */
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color:var(--color-yellow); ;            /* hover color */
+  text-decoration: underline;
+}
+</style>
